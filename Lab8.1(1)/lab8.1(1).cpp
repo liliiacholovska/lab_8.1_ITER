@@ -20,7 +20,10 @@ int FindThirdDotIndex(const char* str) {
 char* ReplaceEveryFourthCharWithDot(const char* str) {
     size_t len = strlen(str);
     char* newStr = new char[len + 1];
-    strcpy(newStr, str);
+    for (size_t i = 0; i < len; ++i) {
+        newStr[i] = str[i];
+    }
+    newStr[len] = '\0';
     for (size_t i = 3; i < len; i += 4) {
         newStr[i] = '.';
     }
